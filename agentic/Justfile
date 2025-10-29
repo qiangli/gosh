@@ -1,0 +1,24 @@
+#!/usr/bin/env -S just --justfile
+
+default:
+  @just --list
+
+build:
+    time ./build.sh
+
+# build: tidy
+#     ./build.sh all
+
+test:
+    go test -short ./...
+
+tidy:
+    go mod tidy
+    go fmt ./...
+    go vet ./...
+
+update:
+    go get -u ./...
+
+clean-cache:
+    go clean -modcache

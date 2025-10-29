@@ -19,7 +19,7 @@ For the Go compiler to find the `gosh` source, the plugin has to be written insi
 ```go
 package main
  
-import "gosh/src/gosh"
+import "github.com/qiangli/shell/agentic/sh"
  
 func OnKey(g *gosh.Gosh, s string) bool {
     return s == "ok"
